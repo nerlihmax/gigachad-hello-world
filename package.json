@@ -5,7 +5,8 @@
   "main": "src/index.ts",
   "scripts": {
     "build": "webpack",
-    "test": "jest"
+    "test": "jest",
+    "start": "node dist/bundle.js"
   },
   "repository": {
     "type": "git",
