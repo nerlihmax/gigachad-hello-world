@@ -1,3 +1,5 @@
 {
-  "trackerUrl": "https://yandex.ru/aboba?among=us"
+  "release": {
+    "trackerUrl": "https://yandex.ru/aboba?among=us"
+  }
 }
