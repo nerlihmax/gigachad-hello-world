@@ -18,14 +18,11 @@ jobs:
         with:
           node-version: 'lts/*'
 
-      - name: install package deps
-        run: npm ci
+      - name: install small-ci
+        run: npm i -g small-ci
 
-      - name: build package
-        run: npm run build
-
-      - name: run tests
-        run: npm run test
-
-      - name: run app
-        run: npm run start
+      - name: run small-ci release
+        run: small-ci release
+        shell: bash
+        env:
+          SCI_RELEASE_OAUTH: ${{ secrets.SCI_RELEASE_OAUTH }}
