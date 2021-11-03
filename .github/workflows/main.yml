@@ -22,7 +22,7 @@ jobs:
         run: npm i -g small-ci
 
       - name: run small-ci release
-        run: cd shri-homework-08-devops && small-ci release
+        run: ls -la && small-ci release
         shell: bash
         env:
           SCI_RELEASE_OAUTH: ${{ secrets.SCI_RELEASE_OAUTH }}
