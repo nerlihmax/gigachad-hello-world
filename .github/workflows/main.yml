@@ -19,10 +19,10 @@ jobs:
           node-version: 'lts/*'
 
       - name: install small-ci
-        run: npm i -g small-ci
+        run: npm i small-ci
 
       - name: run tracker script
-        run: pwd && ls -la && git status && git --no-pager log && small-ci tracker --debug
+        run: pwd && ls -la && git status && git --no-pager log && npx small-ci tracker --debug
         shell: bash
         env:
           SCI_RELEASE_OAUTH: ${{ secrets.SCI_TRACKER_OAUTH }}
