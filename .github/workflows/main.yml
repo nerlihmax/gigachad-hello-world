@@ -7,7 +7,7 @@ on:
       - 'v*.*.*'
 
 jobs:
-  release:
+  main:
     runs-on: ubuntu-latest
     steps:
       - name: clone repo
@@ -23,8 +23,20 @@ jobs:
       - name: install small-ci
         run: npm i small-ci
 
-      - name: run tracker script
+      - name: install deps
+        run: npm ci
+
+      - name: create issue on tracker with changelogs
         run: npx small-ci tracker --debug
+        shell: bash
+        env:
+          SCI_RELEASE_OAUTH: ${{ secrets.SCI_TRACKER_OAUTH }}
+
+      - name: run tests
+        run: npm run test &> test.log
+
+      - name: add tests results to tracker
+        run: testlog=`cat test.log` && npx small-ci tracker --debug --comment=$testlog 
         shell: bash
         env:
           SCI_RELEASE_OAUTH: ${{ secrets.SCI_TRACKER_OAUTH }}
