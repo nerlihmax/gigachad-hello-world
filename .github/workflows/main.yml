@@ -40,3 +40,12 @@ jobs:
         shell: bash
         env:
           SCI_TRACKER_OAUTH: ${{ secrets.SCI_TRACKER_OAUTH }}
+
+      - name: build docker image
+        run: npx small-ci docker &> docker.log
+
+      - name: add docker results to tracker
+        run: npx small-ci tracker --comment="$(<docker.log)"
+        shell: bash
+        env:
+          SCI_TRACKER_OAUTH: ${{ secrets.SCI_TRACKER_OAUTH }}
