@@ -3,8 +3,8 @@ name: CI/CD
 on:
   workflow_dispatch:
   push:
-      tags:
-        - 'v*.*.*'
+    tags:
+      - 'v*.*.*'
 
 jobs:
   release:
@@ -21,8 +21,8 @@ jobs:
       - name: install small-ci
         run: npm i -g small-ci
 
-      - name: run small-ci release
-        run: ls -la && small-ci release
+      - name: run tracker script
+        run: small-ci tracker
         shell: bash
         env:
           SCI_RELEASE_OAUTH: ${{ secrets.SCI_RELEASE_OAUTH }}
