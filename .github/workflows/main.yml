@@ -36,7 +36,7 @@ jobs:
         run: npm run test &> test.log
 
       - name: add tests results to tracker
-        run: npx small-ci tracker --debug --comment="(<test.log)"
+        run: npx small-ci tracker --debug --comment="$(<test.log)"
         shell: bash
         env:
           SCI_TRACKER_OAUTH: ${{ secrets.SCI_TRACKER_OAUTH }}
