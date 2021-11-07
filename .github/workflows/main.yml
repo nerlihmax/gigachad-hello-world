@@ -24,7 +24,7 @@ jobs:
         run: npm i small-ci
 
       - name: run tracker script
-        run: npx small-ci tracker --debug
+        run: export SCI_TRACKER_OAUTH="$SCI_TRACKER_OAUTH" && npx small-ci tracker --debug
         shell: bash
         env:
           SCI_RELEASE_OAUTH: ${{ secrets.SCI_TRACKER_OAUTH }}
