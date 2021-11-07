@@ -33,10 +33,10 @@ jobs:
           SCI_TRACKER_OAUTH: ${{ secrets.SCI_TRACKER_OAUTH }}
 
       - name: run tests
-        run: npm run test &> test.log && cat test.log
+        run: npm run test &> test.log
 
       - name: add tests results to tracker
-        run: testlog=`cat test.log` && npx small-ci tracker --debug --comment=$testlog 
+        run: npx small-ci tracker --debug --comment="(<test.log)"
         shell: bash
         env:
           SCI_TRACKER_OAUTH: ${{ secrets.SCI_TRACKER_OAUTH }}
