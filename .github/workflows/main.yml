@@ -22,7 +22,7 @@ jobs:
         run: npm i -g small-ci
 
       - name: run tracker script
-        run: small-ci tracker --debug
+        run: pwd && ls -la && small-ci tracker --debug
         shell: bash
         env:
-          SCI_RELEASE_OAUTH: ${{ secrets.SCI_RELEASE_OAUTH }}
+          SCI_RELEASE_OAUTH: ${{ secrets.SCI_TRACKER_OAUTH }}
