@@ -5,12 +5,11 @@
 
 "Hello, World!" - приложение на Node.js и Typescript.
 
-## Домашнее задание "Инфраструктура"
 - Использую Github Actions
 - самописную утилиту [small-ci](https://github.com/nerlihmax/small-ci)
 
 ## Установка
-- `git clone git@github.com:nerlihmax/shri-homework-08-devops.git`
+- `git clone git@github.com:nerlihmax/maybe-best-practise-hello-world.git`
 - `npm ci`
 ## Сборка
 - `npm run build`
